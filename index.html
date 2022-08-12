@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Smoke Text Animation</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laborum expedita vero officia soluta neque fuga, architecto delectus et incidunt voluptatum dolorem cupiditate nisi? Minima aspernatur deserunt veritatis illum atque!</p>
+        </section>
+        <script>
+            const text =document.querySelector('.text');
+            text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");
+
+            const letters = document.querySelectorAll('span');
+            for (let i=0;i<letters.length;i++){
+                letters[i].addEventListener("mouseover",function(){
+                    letters[i].classList.add('active')
+                })
+            }
+        </script>
+    </body>
+</html>
